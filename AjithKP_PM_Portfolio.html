@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajith K P — Product Manager Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-elevated: #f1f5f9;
+      --surface: #ffffff;
+      --surface-hover: #f8fafc;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --text: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --accent: #0f172a;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ========== HEADER ========== */
+    header {
+      padding: 48px 0 32px;
+    }
+    
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    .name {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    
+    .header-links {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .header-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s;
+    }
+    
+    .header-links a:hover { color: var(--text); }
+    .header-links svg { width: 14px; height: 14px; }
+    
+    .tagline {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    
+    /* ========== JOURNEY - HORIZONTAL ========== */
+    .journey-section {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    
+    .journey-card {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg) 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      transition: all 0.2s;
+    }
+    
+    .journey-card:hover {
+      border-color: var(--border-dark);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transform: translateY(-2px);
+    }
+    
+    .journey-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 12px 12px 0 0;
+    }
+    
+    .journey-card:nth-child(1)::before { background: var(--accent-blue); }
+    .journey-card:nth-child(2)::before { background: var(--accent-purple); }
+    .journey-card:nth-child(3)::before { background: var(--accent-emerald); }
+    
+    .journey-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    
+    .journey-card:nth-child(1) .journey-label { color: var(--accent-blue); }
+    .journey-card:nth-child(2) .journey-label { color: var(--accent-purple); }
+    .journey-card:nth-child(3) .journey-label { color: var(--accent-emerald); }
+    
+    .journey-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    
+    .journey-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    
+    .journey-stat {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 8px;
+      background: var(--bg-elevated);
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    
+    /* ========== STATS ROW ========== */
+    .stats-section {
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    
+    .stat-item {
+      text-align: center;
+      flex: 1;
+      padding: 12px 8px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    
+    .stat-number {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    /* ========== CERTIFICATIONS - REFINED ========== */
+    .certs-section {
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    
+    .section-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--bg-elevated);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .section-icon svg {
+      width: 12px;
+      height: 12px;
+      color: var(--text-muted);
+    }
+    
+    .section-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+    
+    .certs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      transition: all 0.15s;
+    }
+    
+    .cert-badge:hover {
+      border-color: var(--border-dark);
+      background: var(--bg-secondary);
+    }
+    
+    .cert-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+    }
+    
+    .cert-icon.pmi { background: #e0f2fe; color: #0369a1; }
+    .cert-icon.ps { background: #fef3c7; color: #b45309; }
+    .cert-icon.pragmatic { background: #f3e8ff; color: #7c3aed; }
+    .cert-icon.ml { background: #dcfce7; color: #15803d; }
+    .cert-icon.award { background: #fce7f3; color: #be185d; }
+    
+    /* ========== CASE STUDIES ========== */
+    .cases-section {
+      padding: 24px 0 32px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .cases-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .case-card {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.15s;
+    }
+    
+    .case-card:hover {
+      border-color: var(--border-dark);
+      background: var(--surface-hover);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    
+    .case-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+    }
+    
+    .case-logo.uber { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); }
+    .case-logo.zepto { background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%); }
+    .case-logo.meesho { background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%); }
+    .case-logo.build { background: linear-gradient(135deg, #059669 0%, #34d399 100%); }
+    
+    .case-content { min-width: 0; }
+    
+    .case-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    
+    .case-company {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+    
+    .case-type {
+      font-size: 9px;
+      padding: 2px 6px;
+      background: var(--bg-elevated);
+      border-radius: 3px;
+      color: var(--text-muted);
+    }
+    
+    .case-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    
+    .case-summary {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    
+    .tag {
+      padding: 2px 6px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    
+    .case-arrow {
+      color: var(--text-light);
+      font-size: 16px;
+      transition: all 0.15s;
+    }
+    
+    .case-card:hover .case-arrow {
+      transform: translateX(3px);
+      color: var(--text-muted);
+    }
+    
+    /* ========== CASE DETAIL ========== */
+    .case-detail {
+      display: none;
+      padding: 32px 0;
+      animation: fadeIn 0.25s ease;
+    }
+    
+    .case-detail.active { display: block; }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .detail-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      padding: 6px 10px;
+      background: var(--bg-secondary);
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    
+    .detail-back:hover {
+      background: var(--bg-elevated);
+      color: var(--text);
+    }
+    
+    .detail-title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    
+    .detail-meta {
+      display: flex;
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .detail-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .detail-content h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 28px 0 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .detail-content h2:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    
+    .detail-content h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 16px 0 6px;
+    }
+    
+    .detail-content p {
+      margin-bottom: 10px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    
+    .detail-content blockquote {
+      border-left: 3px solid var(--accent-blue);
+      padding: 12px 16px;
+      margin: 16px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    
+    .detail-content ul, .detail-content ol {
+      margin: 10px 0;
+      padding-left: 18px;
+    }
+    
+    .detail-content li {
+      margin-bottom: 4px;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+    
+    .detail-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    
+    .detail-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .detail-content th, .detail-content td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .detail-content th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-secondary);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .detail-content td {
+      color: var(--text-secondary);
+    }
+    
+    .detail-content tr:last-child td {
+      border-bottom: none;
+    }
+    
+    /* ========== FOOTER ========== */
+    footer {
+      padding: 24px 0 40px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    
+    .footer-text h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    
+    .footer-text p {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .footer-link {
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 13px;
+      transition: all 0.15s;
+    }
+    
+    .footer-link.secondary {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    
+    .footer-link.secondary:hover {
+      border-color: var(--border-dark);
+    }
+    
+    .footer-link.primary {
+      background: var(--accent);
+      color: white;
+      border: 1px solid var(--accent);
+    }
+    
+    .footer-link.primary:hover {
+      background: var(--text-secondary);
+    }
+    
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .header-top { flex-direction: column; gap: 12px; }
+      .journey-grid { grid-template-columns: 1fr; }
+      .stats-row { flex-wrap: wrap; }
+      .stat-item { flex: 1 1 30%; }
+      .case-card { grid-template-columns: 40px 1fr; }
+      .case-arrow { display: none; }
+      .footer-content { flex-direction: column; text-align: center; gap: 16px; }
+    }
+    
+    @media (max-width: 480px) {
+      .stat-item { flex: 1 1 45%; }
+      .certs-grid { gap: 6px; }
+      .cert-badge { font-size: 11px; padding: 4px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="header-top">
+        <h1 class="name">Ajith K P</h1>
+        <div class="header-links">
+          <a href="mailto:ajithkp9@outlook.com">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Email
+          </a>
+          <a href="tel:+919746010927">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +91 9746010927
+          </a>
+          <a href="https://linkedin.com/in/ajithkp-pm" target="_blank">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <p class="tagline">I've spent 5+ years preparing for product management — not by studying it, but by doing it from every angle. This is my product thinking.</p>
+    </header>
+    
+    <!-- Journey - Horizontal Cards -->
+    <section class="journey-section">
+      <div class="journey-grid">
+        <div class="journey-card">
+          <div class="journey-label">01 · Engineer</div>
+          <div class="journey-title">Built & Automated</div>
+          <div class="journey-desc">3+ years at Capgemini. Automated 20+ enterprise apps, built 600+ test scripts, integrated CI/CD pipelines.</div>
+          <span class="journey-stat">60% faster regression · 18 days saved/mo</span>
+        </div>
+        <div class="journey-card">
+          <div class="journey-label">02 · Marketer</div>
+          <div class="journey-title">Positioned & Launched</div>
+          <div class="journey-desc">First Technical PMM at Katalon. Owned AI product messaging, authored 30+ blogs, built 13 custom GPTs.</div>
+          <span class="journey-stat">37% pipeline growth · 60% automation</span>
+        </div>
+        <div class="journey-card">
+          <div class="journey-label">03 · PM</div>
+          <div class="journey-title">Shipped & Scaled</div>
+          <div class="journey-desc">Freelance Technical PM. Built SaaS AI CRM for 23 users. Shipped 6 modules, led conversational AI integration.</div>
+          <span class="journey-stat">12 sprints · 60% faster qualification</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Stats Row -->
+    <section class="stats-section">
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Discovery Sessions</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">37%</div>
+          <div class="stat-label">Pipeline Growth</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Technical Blogs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">13</div>
+          <div class="stat-label">GPTs Built</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Modules Shipped</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Certifications -->
+    <section class="certs-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h2 class="section-title">Certifications & Recognition</h2>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-badge">
+          <span class="cert-icon pmi">P</span>
+          Technical PM — PMI
+        </div>
+        <div class="cert-badge">
+          <span class="cert-icon ps">PS</span>
+          Product School Micro-Cert
+        </div>
+        <div class="cert-badge">
+          <span class="cert-icon pragmatic">Pr</span>
+          Pragmatic Certified PMM
+        </div>
+        <div class="cert-badge">
+          <span class="cert-icon ml">ML</span>
+          Data Science & ML
+        </div>
+        <div class="cert-badge">
+          <span class="cert-icon award">★</span>
+          CMO Circle Award — Katalon
+        </div>
+      </div>
+    </section>
+    
+    <!-- Case Studies List -->
+    <section class="cases-section" id="cases-list">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        </div>
+        <h2 class="section-title">Case Studies</h2>
+      </div>
+      <div class="cases-grid">
+        <a class="case-card" onclick="showCase('uber')">
+          <div class="case-logo uber">U</div>
+          <div class="case-content">
+            <div class="case-header">
+              <span class="case-company">Uber</span>
+              <span class="case-type">PM Assignment</span>
+            </div>
+            <div class="case-title">Diagnosing Low Adoption for Uber Reserve</div>
+            <div class="case-summary">Why urban professionals weren't adopting Uber Reserve despite needing reliable rides.</div>
+            <div class="case-tags">
+              <span class="tag">User Research</span>
+              <span class="tag">JTBD</span>
+              <span class="tag">First Principles</span>
+            </div>
+          </div>
+          <span class="case-arrow">→</span>
+        </a>
+        
+        <a class="case-card" onclick="showCase('zepto')">
+          <div class="case-logo zepto">Z</div>
+          <div class="case-content">
+            <div class="case-header">
+              <span class="case-company">Zepto</span>
+              <span class="case-type">Strategy Case</span>
+            </div>
+            <div class="case-title">Pet Grooming Market Entry Strategy</div>
+            <div class="case-summary">Market research and competitive positioning for mobile pet grooming services.</div>
+            <div class="case-tags">
+              <span class="tag">Market Analysis</span>
+              <span class="tag">Competitive Strategy</span>
+            </div>
+          </div>
+          <span class="case-arrow">→</span>
+        </a>
+        
+        <a class="case-card" onclick="showCase('meesho')">
+          <div class="case-logo meesho">M</div>
+          <div class="case-content">
+            <div class="case-header">
+              <span class="case-company">Meesho</span>
+              <span class="case-type">PM Assignment</span>
+            </div>
+            <div class="case-title">Increasing Transactions Per User (ARPU)</div>
+            <div class="case-summary">User research and solutions to increase ARPU by solving the trust deficit.</div>
+            <div class="case-tags">
+              <span class="tag">User Research</span>
+              <span class="tag">Growth</span>
+              <span class="tag">RICE</span>
+            </div>
+          </div>
+          <span class="case-arrow">→</span>
+        </a>
+        
+        <a class="case-card" onclick="showCase('plateplan')">
+          <div class="case-logo build">P</div>
+          <div class="case-content">
+            <div class="case-header">
+              <span class="case-company">0→1 Build</span>
+              <span class="case-type">Product Spec</span>
+            </div>
+            <div class="case-title">PlatePlan: Smart Meal Planning App</div>
+            <div class="case-summary">Full product specification and prototype eliminating decision fatigue.</div>
+            <div class="case-tags">
+              <span class="tag">Product Spec</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">User Flows</span>
+            </div>
+          </div>
+          <span class="case-arrow">→</span>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Case Study Details -->
+    
+    <!-- UBER -->
+    <section class="case-detail" id="case-uber">
+      <a class="detail-back" onclick="hideCase()">← Back to cases</a>
+      <h1 class="detail-title">Uber Reserve: Diagnosing Low Adoption</h1>
+      <div class="detail-meta">
+        <span>🏢 Uber</span>
+        <span>📋 PM Assignment</span>
+        <span>🔬 User Research, JTBD</span>
+      </div>
+      <div class="detail-content">
+        <h2>The Challenge</h2>
+        <p>Uber Reserve allows users to pre-book rides for scheduled needs. Despite being live, <strong>adoption among urban professionals in Tier 1 cities remained low.</strong></p>
+        <p>My task: Understand why users aren't adopting and propose a product improvement.</p>
+        
+        <h2>First Principles Analysis</h2>
+        <h3>What must be true for someone to use Reserve?</h3>
+        <ol>
+          <li>They have a future, time-bound need (flight, meeting)</li>
+          <li>They believe Reserve is more reliable than alternatives</li>
+          <li>The price premium feels justified</li>
+          <li>The experience is clear and reassuring</li>
+        </ol>
+        
+        <h2>The Diagnosis</h2>
+        <p><strong>Trust Gap:</strong> "Will the driver actually show up?" "What if they cancel last minute?"</p>
+        <p><strong>Mental Model Mismatch:</strong> Users expect "hotel booking" level confirmation. Reserve behaves like "we'll try to find a car at that time."</p>
+        
+        <h2>JTBD Framework</h2>
+        <blockquote>When I have an early-morning flight, I want to be absolutely sure I have a reliable ride waiting, so I can avoid anxiety about missing my departure.</blockquote>
+        
+        <h2>Solution: "Uber Reserve Confidence"</h2>
+        <table>
+          <tr><th>Feature</th><th>User Benefit</th></tr>
+          <tr><td>Early Hard Confirmation (12-4 hrs)</td><td>Converts "hope" into visible plan</td></tr>
+          <tr><td>Driver Visibility & Pre-messaging</td><td>Mimics comfort of known taxi driver</td></tr>
+          <tr><td>Clear Backup Guarantee</td><td>Reduces anxiety for critical trips</td></tr>
+          <tr><td>Transparent Premium Explanation</td><td>Connects price to tangible value</td></tr>
+        </table>
+        
+        <h2>Key Takeaway</h2>
+        <p>The problem wasn't awareness or pricing — it was <strong>trust architecture.</strong> The solution converts hope into a visible, enforceable promise.</p>
+      </div>
+    </section>
+    
+    <!-- ZEPTO -->
+    <section class="case-detail" id="case-zepto">
+      <a class="detail-back" onclick="hideCase()">← Back to cases</a>
+      <h1 class="detail-title">Zepto: Pet Grooming Market Entry</h1>
+      <div class="detail-meta">
+        <span>🏢 Zepto</span>
+        <span>📋 Strategy Case</span>
+        <span>📊 Market Analysis</span>
+      </div>
+      <div class="detail-content">
+        <h2>The Opportunity</h2>
+        <p>India's pet population: ~42M (2025). <strong>70% of owners are Millennials/Gen Z</strong> who view pets as family.</p>
+        
+        <h2>Market Sizing</h2>
+        <table>
+          <tr><th>Metric</th><th>Data</th></tr>
+          <tr><td>Total Pet Care Market (2026)</td><td>~$3.6B</td></tr>
+          <tr><td>Services vs Products</td><td>52% services</td></tr>
+          <tr><td>Mobile grooming premium</td><td>30-40% over salons</td></tr>
+        </table>
+        
+        <h2>Competitive Gaps</h2>
+        <table>
+          <tr><th>Competitor</th><th>Exploitable Gap</th></tr>
+          <tr><td>Flying Fur</td><td>Inconsistent franchise quality</td></tr>
+          <tr><td>Urban Company</td><td>In-home only (creates mess)</td></tr>
+          <tr><td>HUFT</td><td>Primarily in-store</td></tr>
+        </table>
+        
+        <h2>The Strategic Insight</h2>
+        <blockquote>The grooming truck isn't just a service center — it's a mobile warehouse and sampling hub.</blockquote>
+        <p>Convert <strong>one-time service into recurring product subscription</strong> by enabling instant ordering of products used during the session.</p>
+        
+        <h2>Key Takeaway</h2>
+        <p>Zepto's advantage: <strong>integration of service and commerce</strong> that no competitor can replicate.</p>
+      </div>
+    </section>
+    
+    <!-- MEESHO -->
+    <section class="case-detail" id="case-meesho">
+      <a class="detail-back" onclick="hideCase()">← Back to cases</a>
+      <h1 class="detail-title">Meesho: Increasing ARPU Through Trust</h1>
+      <div class="detail-meta">
+        <span>🏢 Meesho</span>
+        <span>📋 PM Assignment</span>
+        <span>📈 Growth, Prioritization</span>
+      </div>
+      <div class="detail-content">
+        <h2>The Challenge</h2>
+        <p>Meesho democratized e-commerce for Tier-2+ India, but <strong>ARPU remains stagnant</strong> with 25% weekly retention for new users.</p>
+        
+        <h2>Core Insight</h2>
+        <blockquote>"The Discrete Transaction Trap" — Users treat every purchase as a high-risk gamble, not habitual shopping.</blockquote>
+        
+        <h2>User Segmentation</h2>
+        <table>
+          <tr><th>Segment</th><th>Blocker</th></tr>
+          <tr><td>Habitual Stylist</td><td>Quality variance fear</td></tr>
+          <tr><td>Cautious Trialist</td><td>Logistics anxiety</td></tr>
+          <tr><td>Price-Hopping Nomad</td><td>No emotional connection</td></tr>
+          <tr><td>Category Enthusiast</td><td>Trust ceiling</td></tr>
+        </table>
+        
+        <h2>Prioritized Solutions (RICE)</h2>
+        <table>
+          <tr><th>#</th><th>Solution</th><th>Score</th></tr>
+          <tr><td>1</td><td>OTP-Verified "Open Box" Delivery</td><td>10.1</td></tr>
+          <tr><td>2</td><td>Instant Wallet Refunds</td><td>8.9</td></tr>
+          <tr><td>3</td><td>Video-First Review Feed</td><td>7.9</td></tr>
+        </table>
+        
+        <h2>Key Takeaway</h2>
+        <p>ARPU problem = <strong>trust debt.</strong> Solution: systematic trust-building through visible quality signals and frictionless recovery.</p>
+      </div>
+    </section>
+    
+    <!-- PLATEPLAN -->
+    <section class="case-detail" id="case-plateplan">
+      <a class="detail-back" onclick="hideCase()">← Back to cases</a>
+      <h1 class="detail-title">PlatePlan: 0→1 Meal Planning App</h1>
+      <div class="detail-meta">
+        <span>🏢 0→1 Build</span>
+        <span>📋 Product Spec</span>
+        <span>🎨 Prototyping</span>
+      </div>
+      <div class="detail-content">
+        <h2>The Problem</h2>
+        <p>Busy professionals experience <strong>decision fatigue</strong> around what to cook — limited time, dietary constraints, no visibility into pantry.</p>
+        <blockquote>Users don't fail at cooking because they can't cook — they fail because deciding what to make is too hard.</blockquote>
+        
+        <h2>Three Problems to Solve</h2>
+        <ol>
+          <li><strong>"What do I cook?" Paralysis</strong> — No recipes filtered for your reality NOW</li>
+          <li><strong>Pantry Blindspot</strong> — No mental model of what's in the kitchen</li>
+          <li><strong>Weekly Planning Overhead</strong> — Planning feels like a chore</li>
+        </ol>
+        
+        <h2>Core User Flows</h2>
+        <table>
+          <tr><th>Flow</th><th>Design Goal</th></tr>
+          <tr><td>"What Do I Cook?"</td><td>Decide in under 30 seconds</td></tr>
+          <tr><td>Pantry Management</td><td>Accurate with minimal effort</td></tr>
+          <tr><td>Weekly Planning</td><td>Feels like picking from a menu</td></tr>
+        </table>
+        
+        <h2>Key Product Behaviors</h2>
+        <ul>
+          <li><strong>Time-aware suggestions</strong> — 8 AM = breakfast, 7 PM = dinner</li>
+          <li><strong>Pantry-first filtering</strong> — Prioritize what you can make NOW</li>
+          <li><strong>Expiry-aware nudges</strong> — Surface recipes using expiring items</li>
+        </ul>
+        
+        <h2>Success Definition</h2>
+        <blockquote>User opens PlatePlan at 7 PM → sees dinner they can make in 30 min with what they have → starts cooking in under 30 seconds.</blockquote>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-text">
+          <h2>Let's build something.</h2>
+          <p>Looking for PM roles where I can own outcomes end-to-end.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/ajithkp-pm" target="_blank" class="footer-link secondary">LinkedIn</a>
+          <a href="mailto:ajithkp9@outlook.com" class="footer-link primary">Email Me</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script>
+    function showCase(caseId) {
+      document.getElementById('cases-list').style.display = 'none';
+      document.querySelectorAll('.case-detail').forEach(el => el.classList.remove('active'));
+      const caseDetail = document.getElementById('case-' + caseId);
+      caseDetail.classList.add('active');
+      setTimeout(() => {
+        caseDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+    
+    function hideCase() {
+      document.querySelectorAll('.case-detail').forEach(el => el.classList.remove('active'));
+      document.getElementById('cases-list').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('cases-list').offsetTop - 40, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
